@@ -57,7 +57,7 @@ if %n% LSS 1 goto INVALID
 if %n% GTR 15 goto INVALID
 if /I "%module%"=="M1" set "filename=Module_1_Practical_%number%.pdf"
 if /I "%module%"=="M2" set "filename=Module_2_Practical_%number%.pdf"
-start "" msedge.exe "https://raw.githubusercontent.com/TanjiroKamado63/pikachu/refs/heads/main/%filename%"
+start "" msedge.exe "https://github.com/TanjiroKamado63/pikachu/blob/main/%filename%"
 goto MENU
 
 :INVALID
