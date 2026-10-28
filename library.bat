@@ -1,12 +1,10 @@
 @echo off
 setlocal EnableExtensions
 title Android Programming Practical Library
-color 0B
 :HOME
 cls
 echo ===============================================================================
 echo                       ANDROID PROGRAMMING PRACTICAL LIBRARY
-echo                         GitHub: TanjiroKamado63 / pikachu
 echo ===============================================================================
 echo.
 echo MODULE 1 - ANDROID FUNDAMENTALS ^& UI DESIGN
@@ -64,16 +62,10 @@ if not defined FILE (
 )
 if exist "%~dp0%FILE%" goto OPENFILE
 echo.
-echo PDF not found locally. Attempting download from GitHub branch main...
-powershell -NoProfile -ExecutionPolicy Bypass -Command "$u='https://raw.githubusercontent.com/TanjiroKamado63/pikachu/main/%FILE%'; try { Invoke-WebRequest -Uri $u -OutFile '%~dp0%FILE%' -UseBasicParsing; exit 0 } catch { exit 1 }"
-if errorlevel 1 (
-    echo.
-    echo Download failed. Make sure the PDF has been uploaded to:
-    echo https://github.com/TanjiroKamado63/pikachu/tree/main
-    echo Expected file: %FILE%
-    pause
-    goto HOME
-)
+echo.
+echo PDF not found in this folder. Keep the practical PDFs beside library.bat.
+pause
+goto HOME
 :OPENFILE
 echo Opening %FILE% ...
 start "" "%~dp0%FILE%"
